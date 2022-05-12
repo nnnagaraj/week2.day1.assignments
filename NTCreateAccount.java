@@ -16,7 +16,7 @@ public class NTCreateAccount {
 
 		// 1. Launch URL "http://leaftaps.com/opentaps/control/login"
 		driver.get("http://leaftaps.com/opentaps/control/login");
-		//
+		
 		// 2. Enter UserName and Password Using Id Locator
 		driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
 		driver.findElement(By.id("password")).sendKeys("crmsfa");
@@ -32,23 +32,22 @@ public class NTCreateAccount {
 
 		// 6. Click on Create Account
 		driver.findElement(By.linkText("Create Account")).click();
-		//
+	
 		// 7. Select preferred currency as Indian Rupee using SelectByValue
 		WebElement findElement0 = driver.findElement(By.id("currencyUomId"));
 		Select sel0 = new Select(findElement0);
 		sel0.selectByValue("INR");
-		//
+		
 		// 8. Enter the Description text as "NRI Account"
 		driver.findElement(By.xpath("//textarea[@class='inputBox']")).sendKeys("NRI Account");
-		//
+		
 		// 9. Enter LocalName Field Using Xpath Locator
 		driver.findElement(By.xpath("//input[@id='groupNameLocal']")).sendKeys("Nagaraj Nagendran Nagarethinam");
 
 		// 10. Enter SiteName Field Using Xpath Locator
 		driver.findElement(By.xpath("//input[@id='officeSiteName']")).sendKeys("Chennai");
-		//
-		// 11. Enter value for AnnualRevenue Field using Xpath Locator but class as
-		// Attribute
+	
+		// 11. Enter value for AnnualRevenue Field using Xpath Locator but class as Attribute
 		driver.findElement(By.xpath("//input[@id='annualRevenue']")).sendKeys("25000");
 
 		// 12. Select Industry as ComputerSoftware
@@ -65,27 +64,22 @@ public class NTCreateAccount {
 		WebElement findElement2 = driver.findElement(By.xpath("(//select[@name='dataSourceId'])"));
 		Select sel2 = new Select(findElement2);
 		sel2.selectByValue("LEAD_EMPLOYEE");
-		//
-		// 15. Select Marketing Campaign as eCommerce Site Internal Campaign using
-		// SelectbyIndex
+	
+		// 15. Select Marketing Campaign as eCommerce Site Internal Campaign using SelectbyIndex
 		WebElement findElement3 = driver.findElement(By.xpath("(//select[@name='marketingCampaignId'])"));
 		Select sel3 = new Select(findElement3);
 		sel3.selectByIndex(6);
-		//
+		
 		// 16. Select State/Province as Texas using SelectByValue
-
 		WebElement findElement4 = driver.findElement(By.xpath("(//select[@name='generalStateProvinceGeoId'])"));
 		Select sel4 = new Select(findElement4);
 		sel4.selectByValue("TX");
 
-		//
 		// 17. Click on Create Account using Xpath Locator
 		driver.findElement(By.xpath("//input[@class='smallSubmit']")).click();
 
-		//
 		// 18. Get the Text of Error Message Displayed (hint: Red Texts)
 		String text = driver.findElement(By.className("errorMessageHeader")).getText();
-		// String text = driver.switchTo().alert().getText();
 		System.out.println(text);
 
 		String text1 = driver.findElement(By.className("errorMessage")).getText();
