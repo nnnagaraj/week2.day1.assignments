@@ -84,9 +84,11 @@ public class NTCreateAccount {
 
 		//
 		// 18. Get the Text of Error Message Displayed (hint: Red Texts)
-//		String text = driver.switchTo().alert().getText();
-//		System.out.println(text);
-		System.out.println("Thank You");
-	}
+		String text = driver.findElement(By.className("errorMessageHeader")).getText();
+		// String text = driver.switchTo().alert().getText();
+		System.out.println(text);
 
+		String text1 = driver.findElement(By.className("errorMessage")).getText();
+		System.out.println(text1);
+	}
 }
